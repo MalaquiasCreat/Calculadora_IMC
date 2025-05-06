@@ -1,4 +1,4 @@
-rimeira Função 
+#Primeira Função 
 def calcular_imc(peso, altura):
     # Calcula IMC
     imc = peso / (altura ** 2)
