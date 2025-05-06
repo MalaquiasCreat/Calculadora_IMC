@@ -1,29 +1,26 @@
-#Primeira Função 
-def calcular_imc(peso, altura):
-    # Calcula IMC
-    imc = peso / (altura ** 2)
+#Função para realizar o cálculo do IMC.
+def calcular_imc(peso,altura):
+    altura_metros=altura
+    imc=peso/(altura_metros*2)
     return imc
-#Segunda Função
+    
+# Função para Classificar o Resultado obtido.
 def classificar_imc(imc):
-    # Classifica IMC
     if imc < 18.5:
-        return "Abaixo do peso"
+        return "abaixo do peso"
     elif 18.5 <= imc < 24.9:
-        return "Peso normal"
-    elif 25 <= imc < 29.9:
-        return "Sobrepeso"
+        return "Peso Normal"
+    elif 25<=imc<29.9:
+        return "Sobre Peso"
     else:
         return "Obesidade"
-#Terceira Função
-def main():
-    # Solicita dados do usuário
-    try:
-        peso = float(input("Por Favor digite seu peso: "))
-        altura = float(input("Por Favor digite sua altura: "))
-        
-        # Calcula IMC
-        imc = calcular_imc(peso, altura)
-    
-        # Classifica e exibe o resultado
-        classificacao = classificar_imc(imc)
-        print(f"Seu IMC é: {imc:.2f} - Classificação: {classificacao}")
+
+#Função para gerar campo de preenchimento dos dados a serem calculados.
+peso=float(input("Porfavor digite seu peso:"))
+altura=float(input("Porfavor digite sua altura:"))
+resultado_imc=calcular_imc(peso,altura)
+classificação=classificar_imc(resultado_imc)
+
+#Função para exibir mensagem com resultado e classificação.
+print(f"Seu IMC é {resultado_imc:.2f}")
+print(f"Classificação:{classificação}")
